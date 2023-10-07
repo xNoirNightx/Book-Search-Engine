@@ -1,21 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
+// import React from 'react';
+// import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink } from "@apollo/client";
+// import { setContext } from "@apollo/client/link/context";
+// import SearchBooks from './pages/SearchBooks';
+// import SavedBooks from './pages/SavedBooks';
 
-import App from './App';
+// import App from './App';
 
-// Apollo Client
-const client = new ApolloClient({
-  uri: 'http://localhost:3001/graphql', // does link change once added to heroku ? 
-  cache: new InMemoryCache(),
-});
+// // Apollo Client
+// const client = new ApolloClient({
+//   uri: 'http://localhost:3001/graphql', // does link change once added to heroku ? 
+//   cache: new InMemoryCache(),
+// });
 
-// polloProvider
-ReactDOM.render(
-  <ApolloProvider client={client}>
-    <App />
-  </ApolloProvider>,
-  document.getElementById('root')
-);
+// // polloProvider
+// function App() {
+//   return (
+//     <ApolloProvider client={client}>
+//      <SearchBooks>
+//      <SavedBooks>
+//     <ApolloProvider>
+//   );
+// }
 
-export default App;
+// export default App;

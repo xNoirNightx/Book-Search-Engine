@@ -1,16 +1,14 @@
-import { useState, useEffect } from 'react';
-import {
-  Container,
-  Col,
-  Form,
-  Button,
-  Card,
-  Row
-} from 'react-bootstrap';
 
-import Auth from '../utils/auth';
-import { saveBook, searchGoogleBooks } from '../utils/API';
+// imports to work with graph updates 
+import React, { useState, useEffect } from 'react';
+import { Container, Col, Form, Button, Card, Row } from 'react-bootstrap';
+import { useMutation } from '@apollo/client'; //  use mutation 
+import { SAVE_BOOK } from '../utils/mutations'; // save book mutation
+import { searchGoogleBooks } from '../utils/API';
 import { saveBookIds, getSavedBookIds } from '../utils/localStorage';
+import Auth from '../utils/auth';
+
+
 
 const SearchBooks = () => {
   // create state for holding returned google api data

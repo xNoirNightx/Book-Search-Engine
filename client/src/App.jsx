@@ -1,15 +1,21 @@
-import './App.css';
-import { Outlet } from 'react-router-dom';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { ApolloProvider, ApolloClient, InMemoryCache } from '@apollo/client';
 
-import Navbar from './components/Navbar';
+import App from './App';
 
-function App() {
-  return (
-    <>
-      <Navbar />
-      <Outlet />
-    </>
-  );
-}
+// Apollo Client
+const client = new ApolloClient({
+  uri: 'http://localhost:3001/graphql', // does link change once added to heroku ? 
+  cache: new InMemoryCache(),
+});
+
+// polloProvider
+ReactDOM.render(
+  <ApolloProvider client={client}>
+    <App />
+  </ApolloProvider>,
+  document.getElementById('root')
+);
 
 export default App;

@@ -14,11 +14,29 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
-//  MongoDB database
-//  authMiddleware to request
+// MongoDB
+db.once('open', () => {
+  console.log('Connected to the database');
+});
+
+// authMiddleware 
+app.use(authMiddleware);
+
 // Apollo Server
-//  Server middleware to Express
-// Serve static assets in production
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+  context: ({ req }) => ({ req }), //  authentication
+});
+
+// middleware to express
+server.applyMiddleware({ app });
+
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/build')));
+}
+
+app.use(routes);
 
 
 // Start the server

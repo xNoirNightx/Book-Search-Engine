@@ -1,20 +1,26 @@
-import ReactDOM from 'react-dom'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import App from './App.jsx'
-import SearchBooks from './pages/SearchBooks'
-import SavedBooks from './pages/SavedBooks'
+import App from './App.jsx';
+import SearchBooks from './pages/SearchBooks';
+import SavedBooks from './pages/SavedBooks';
 
-ReactDOM.render(
-  <Router>
-    <App>
-      <Switch>
-        <Route exact path='/' component={SearchBooks} />
-        <Route exact path='/saved' component={SavedBooks} />
-        <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
-      </Switch>
-    </App>
-  </Router>,
-  document.getElementById('root')
-)
+const root = document.getElementById('root');
+
+if (root) {
+  const reactRoot = ReactDOM.createRoot(root);
+
+  reactRoot.render(
+    <Router>
+      <App>
+        <Switch>
+          <Route exact path='/' component={SearchBooks} />
+          <Route exact path='/saved' component={SavedBooks} />
+          <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
+        </Switch>
+      </App>
+    </Router>
+  );
+}
+

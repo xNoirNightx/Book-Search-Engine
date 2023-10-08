@@ -57,13 +57,13 @@ The following image shows the application.
 
 **Note**: This image is a screen shot once I finished the assignment.
 
-![Book-Search-Engine](/Book-Search-Engine/assets/Screenshot%202023-10-08%20131823.png)
+![Book-Search-Engine](../Book-Search-Engine/assets/Screenshot%202023-10-08%20131823.png)
 
 
 ## Credits
-![youtube](https://www.youtube.com/watch?v=98BzS5Oz5E4&list=PL4cUxeGkcC9iJ_KkrkBZWZRHVwnzLIoUE)
-![W3school](https://www.w3schools.com/)
-![Mern Tutorial](https://blog.logrocket.com/mern-stack-tutorial/)
+- [Youtube](https://www.youtube.com/watch?v=98BzS5Oz5E4&list=PL4cUxeGkcC9iJ_KkrkBZWZRHVwnzLIoUE)
+- [W3school](https://www.w3schools.com/)
+- [Mern Tutorial](https://blog.logrocket.com/mern-stack-tutorial/)
 - Study Group Support.
 - Project 3 gave extra practice.
 

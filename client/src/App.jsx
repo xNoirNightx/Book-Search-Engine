@@ -1,20 +1,15 @@
 import React from 'react';
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  createHttpLink
-} from "@apollo/client";
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import SearchBooks from './pages/SearchBooks';
 import SavedBooks from './pages/SavedBooks';
 import Navbar from './components/Navbar';
-import LoginForm from './components/LoginForm'; 
-import SignupForm from './components/SignupForm'; 
+import LoginForm from './components/LoginForm';
+import SignupForm from './components/SignupForm';
 
-// Apollo Client 
+// Apollo Client setup
 const httpLink = createHttpLink({
   uri: '/graphql'
 });
@@ -44,8 +39,8 @@ function App() {
           <Switch>
             <Route exact path='/' component={SearchBooks} />
             <Route exact path='/saved' component={SavedBooks} />
-            <Route exact path='/login' component={LoginForm} /> 
-            <Route exact path='/signup' component={SignupForm} /> 
+            <Route exact path='/login' component={LoginForm} />
+            <Route exact path='/signup' component={SignupForm} />
             <Route render={() => <h1 className='display-2'>Wrong page!</h1>} />
           </Switch>
         </>

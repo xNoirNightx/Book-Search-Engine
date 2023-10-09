@@ -57,7 +57,7 @@ The following image shows the application.
 
 **Note**: This image is a screen shot once I finished the assignment.
 
-![Book-Search-Engine](../Book-Search-Engine/assets/Screenshot%202023-10-08%20131823.png)
+![Book-Search-Engine](/Book-Search-Engine/client/src/assets/Screenshot%202023-10-08%20131823.png)
 
 
 ## Credits

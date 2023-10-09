@@ -9,9 +9,15 @@ import Navbar from './components/Navbar';
 import LoginForm from './components/LoginForm';
 import SignupForm from './components/SignupForm';
 
+// Import process from 'process'
+import process from 'process';
+
 // Apollo Client setup
 const httpLink = createHttpLink({
-  uri: '/graphql'
+  // Conditional URI based on environment
+  uri: process.env.NODE_ENV === 'production'
+    ? 'https://lil-book-engine-0ed9e9ff8cb3.herokuapp.com/graphql'
+    : 'http://localhost:3000/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {
